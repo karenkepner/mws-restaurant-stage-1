@@ -1,5 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
@@ -131,6 +136,9 @@ nav h1 a {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
@@ -141,18 +149,18 @@ nav h1 a {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  /* margin: 15px; */
   min-height: 380px;
-  padding: 0 30px 25px;
+  padding: 5px;
   text-align: left;
-  width: 270px;
+  /* width: 270px; */
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
+  /* min-height: 248px; */
   min-width: 100%;
 }
 #restaurants-list li h1 {
