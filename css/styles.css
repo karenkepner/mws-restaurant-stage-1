@@ -137,7 +137,7 @@ nav h1 a {
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 1em;
   background-color: #f3f3f3;
   list-style: outside none none;
@@ -280,4 +280,23 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* media queries */
+@media screen and (min-width: 420px) {
+  #restaurants-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #restaurants-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  #restaurants-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
