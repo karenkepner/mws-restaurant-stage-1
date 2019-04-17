@@ -242,12 +242,7 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  /* padding: 140px 40px 30px; */
-  /* width: 50%; */
 }
-/* #reviews-container {
-  padding: 30px 40px 80px;
-} */
 #reviews-container h2 {
   color: #f58500;
   font-size: 2em;
@@ -262,36 +257,44 @@ nav h1 a {
   background-color: #fff;
   border: 2px solid #f3f3f3;
   border-radius: 2em 0 2em 0;
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   list-style-type: none;
   margin: 30px;
   overflow: hidden;
 }
 #reviews-list li p:first-of-type,
 #reviews-list li p:nth-of-type(2) {
-  display: inline-block;
   font-size: 1.5em;
   background-color: #333;;
   color: #fff;
   padding: 1em;
   margin: 0;
-  width: 50%;
+  width: 100%;
 }
+/* this is the date */
 #reviews-list li p:nth-of-type(2) {
-  text-align: right;
+  /* text-align: right; */
+  grid-column: 2 / 3;
+
   font-size: 1em;
   padding: 2em;
 }
+/* restaurant rating */
 #reviews-list li p:nth-of-type(3) {
-  display: inline-block;
+  /* width: 20%; */
+  justify-self: start;
   color: #fff;
   background-color: orange;
   padding: 5px 10px;
   border-radius: 0.25em;
   margin-left: 1em;
 }
+
 #reviews-list li p:nth-of-type(4) {
   padding: 1em;
+  grid-row: 4 / 5;
+  grid-column:  1 / 3;
 }
 #restaurant-hours td {
   color: #666;
@@ -312,10 +315,42 @@ nav h1 a {
   #restaurants-list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .inside #maincontent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "restaurant map"
+      "reviews reviews";
+  }
+  .inside #map-container {
+    grid-area: map;
+    order: 1;
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+  }
+  .inside #map {
+    height: 100%;
+  }
+  #restaurant-container {
+    grid-area: restaurant;
+    order: 0;
+    width: 100%;
+
+  }
+  #reviews-container {
+    grid-area: reviews;
+  }
 }
 
 @media screen and (min-width: 1150px) {
   #restaurants-list {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .inside #maincontent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "restaurant map"
+      "reviews .";
   }
 }
