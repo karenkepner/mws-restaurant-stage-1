@@ -28,7 +28,7 @@ self.addEventListener('install', event => {
         cache.addAll(cacheList)
       })
   )
-})
+});
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
