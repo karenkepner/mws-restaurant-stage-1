@@ -6,7 +6,7 @@ const cacheList = [
         "/css/styles.css",
         "/js/main.js",
         "/js/restaurant_info.js",
-        "js/dbhelper.js",
+        "/js/dbhelper.js",
         "/data/restaurants.json",
         "/img/1.jpg",
         "/img/2.jpg",
