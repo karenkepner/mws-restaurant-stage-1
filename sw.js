@@ -1,6 +1,7 @@
 const myCache = 'v1';
 const cacheList = [
         "/",
+        "/restaurant/",
         "/index.html",
         "/restaurant.html",
         "/css/styles.css",

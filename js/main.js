@@ -7,6 +7,7 @@ var markers = []
 //HOW TO RUN THIS IN THE BROWSER:
 // Launch on server locally:$ python3 -m http.server 8000
 // view the server in your browser: $ http://localhost:8000
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
