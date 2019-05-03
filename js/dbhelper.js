@@ -156,7 +156,11 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`${window.location.href}/img/${restaurant.photograph}`);
+    if (directory.includes('git')) {
+      return `/restaurant/data/restaurants.json`;
+    } else {
+      return `http://localhost:${port}/data/restaurants.json`;
+    }
   }
   /**
    * Restaurant image alt text.
