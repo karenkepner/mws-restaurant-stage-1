@@ -7,14 +7,26 @@ class DBHelper {
    * Database URL.
    * Change this to restaurants.json file location on your server.
    */
+
+  static getRoot() {
+    let directory = window.location.href;
+    const port = 8000 // Change this to your server port
+    if (directory.includes('git')) {
+      return `/restaurant/`;
+    } else {
+      return `http://localhost:${port}/`
+    }
+  }
+
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
     // return `/restaurant/data/restaurants.json`;
     let directory = window.location.href;
+    let root = getRoot();
     if (directory.includes('git')) {
-      return `/restaurant/data/restaurants.json`;
+      return `${root}data/restaurants.json`;
     } else {
-      return `http://localhost:${port}/data/restaurants.json`;
+      return `${root}data/restaurants.json`;
     }
   }
 
@@ -156,10 +168,11 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
+    let root = getRoot();
     if (directory.includes('git')) {
-      return `/restaurant/data/restaurants.json`;
+      return `${root}img/`;
     } else {
-      return `http://localhost:${port}/data/restaurants.json`;
+      return `${root}img`;
     }
   }
   /**
