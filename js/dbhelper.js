@@ -22,7 +22,7 @@ class DBHelper {
     const port = 8000 // Change this to your server port
     // return `/restaurant/data/restaurants.json`;
     let directory = window.location.href;
-    let root = getRoot();
+    let root = DBhelper.getRoot();
     if (directory.includes('git')) {
       return `${root}data/restaurants.json`;
     } else {
@@ -168,13 +168,14 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    let root = getRoot();
+    let root = DBhelper.getRoot();
     if (directory.includes('git')) {
       return `${root}img/`;
     } else {
       return `${root}img`;
     }
   }
+  
   /**
    * Restaurant image alt text.
    */
