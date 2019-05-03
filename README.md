@@ -1,8 +1,8 @@
 # Udacity Front End Web Development Nanodegree = Restaurant Review Project
 
 ---
-
-[see it at] (https://karenkepner.github.io/restaurant/)
+See it at:
+https://karenkepner.github.io/restaurant/
 
 #### _Three Stage Course Material Project - Restaurant Reviews_
 
