@@ -11,6 +11,7 @@ class DBHelper {
   getRoot() {
     let directory = window.location.href;
     const port = 8000 // Change this to your server port
+    console.log("does dir include git?: ",directory.includes('git'));
     if (directory.includes('git')) {
       return `/restaurant/`;
     } else {
